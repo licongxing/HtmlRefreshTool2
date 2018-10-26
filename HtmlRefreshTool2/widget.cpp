@@ -11,6 +11,7 @@ Widget::Widget(QWidget *parent) :
 
 //找到窗口，并将目标窗口设置到最前面
 void Widget::FindAndFocus(){
+    //【无欲则刚】30岁回农村 - CSDN博客 - 2345加速浏览器 9.5
     QString title = ui->htmlWinTitle->text();
     if(title.isEmpty()){
         qDebug() <<"没有找到窗口";
@@ -29,12 +30,7 @@ Widget::~Widget()
 void Widget::on_btn1_clicked()
 {
     FindAndFocus();
-    Sleep(1000);
-    //按键模拟函数，模拟F5 3次
-    keybd_event(VK_F5,0,0,0);
-    Sleep(1000);
-    keybd_event(VK_F5,0,0,0);
-    Sleep(1000);
+    //按键模拟函数，模拟F5
     keybd_event(VK_F5,0,0,0);
 }
 /*
@@ -49,7 +45,7 @@ void Widget::on_btn2_clicked()
     POINT pt = {0};
     ClientToScreen(m_hWnd,&pt);
     //设置鼠标位置
-    SetCursorPos(pt.x + 50,pt.y+400);
+    SetCursorPos(pt.x + 300,pt.y+400);
     mouse_event(MOUSEEVENTF_RIGHTDOWN,0,0,0,0);
     Sleep(100);
     mouse_event(MOUSEEVENTF_RIGHTUP,0,0,0,0);
